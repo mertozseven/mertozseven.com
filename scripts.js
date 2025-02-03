@@ -16,13 +16,25 @@ async function fetchMediumArticles() {
                 const firstImage = tempDiv.querySelector('img');
                 const imageUrl = firstImage ? firstImage.src : 'https://miro.medium.com/max/1200/1*jfdwtvU6V6g99q3G7gq7dQ.png';
                 
-                articleCard.innerHTML = `
-                    <div class="article-image" style="background-image: url('${imageUrl}')"></div>
-                    <div class="article-content">
-                        <h3>${article.title}</h3>
-                        <p>${article.pubDate.split(' ')[0]}</p>
-                    </div>
+                // Create article card structure
+                const imageDiv = document.createElement('div');
+                imageDiv.className = 'article-image';
+                
+                const img = document.createElement('img');
+                img.src = imageUrl;
+                img.alt = article.title;
+                img.loading = 'lazy'; // Add lazy loading
+                
+                const contentDiv = document.createElement('div');
+                contentDiv.className = 'article-content';
+                contentDiv.innerHTML = `
+                    <h3>${article.title}</h3>
+                    <p>${article.pubDate.split(' ')[0]}</p>
                 `;
+                
+                imageDiv.appendChild(img);
+                articleCard.appendChild(imageDiv);
+                articleCard.appendChild(contentDiv);
                 
                 articleCard.addEventListener('click', () => {
                     window.open(article.link, '_blank');
