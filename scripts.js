@@ -79,8 +79,20 @@ async function fetchGithubRepositories() {
     }
 }
 
+// Update theme color meta tag
+function updateThemeColor() {
+    const isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const themeColor = isDark ? '#000000' : '#f5f5f7';
+    document.querySelector('meta[name="theme-color"]').setAttribute('content', themeColor);
+}
+
 // Initialize when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
+    // Update theme color on load
+    updateThemeColor();
+    
+    // Listen for color scheme changes
+    window.matchMedia('(prefers-color-scheme: dark)').addListener(updateThemeColor);
     fetchMediumArticles();
     fetchGithubRepositories();
 });
