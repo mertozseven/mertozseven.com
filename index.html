@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <title>Mert Adem Özseven - iOS Developer</title>
+    <meta name="description" content="iOS Developer passionate about creating exceptional mobile experiences. Expertise in Swift, UIKit, and modern iOS development.">
+    <meta name="keywords" content="iOS Developer, Swift Developer, Mobile App Developer, Software Engineer, Turkey">
+    <meta name="author" content="Mert Adem Özseven">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Mert Adem Özseven - iOS Developer">
+    <meta property="og:description" content="iOS Developer passionate about creating exceptional mobile experiences.">
+    <meta property="og:image" content="https://mertozseven.com/favicon/android-chrome-512x512.png">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Mert Adem Özseven - iOS Developer">
+    <meta name="twitter:description" content="iOS Developer passionate about creating exceptional mobile experiences.">
+    <meta name="twitter:image" content="https://mertozseven.com/favicon/android-chrome-512x512.png">
+    
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/favicon/site.webmanifest">
+    <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#0066cc">
+    <meta name="msapplication-TileColor" content="#0066cc">
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
+    
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="profile-section">
+            <img src="profile.jpeg" alt="Mert Adem Özseven" class="profile-image">
+            <h1>Mert Adem Özseven</h1>
+            <p class="title">iOS Developer</p>
+            <p class="bio">iOS Developer crafting elegant mobile experiences with Swift.</p>
+            
+            <div class="social-links">
+                <a href="https://linkedin.com/in/mert-adem-ozseven" target="_blank" aria-label="LinkedIn" rel="noopener noreferrer">
+                    <i class="fab fa-linkedin" title="Connect on LinkedIn"></i>
+                </a>
+                <a href="https://github.com/mertozseven" target="_blank" aria-label="GitHub" rel="noopener noreferrer">
+                    <i class="fab fa-github" title="View GitHub Projects"></i>
+                </a>
+                <a href="https://stackoverflow.com/users/28642562/mertozseven" target="_blank" aria-label="Stack Overflow" rel="noopener noreferrer">
+                    <i class="fab fa-stack-overflow" title="Stack Overflow Profile"></i>
+                </a>
+                <a href="https://instagram.com/mertozseven" target="_blank" aria-label="Instagram" rel="noopener noreferrer">
+                    <i class="fab fa-instagram" title="Follow on Instagram"></i>
+                </a>
+                <a href="mailto:contact@mertozseven.com" aria-label="Email">
+                    <i class="fas fa-envelope" title="Send Email"></i>
+                </a>
+                <a href="https://medium.com/@mertozseven" target="_blank" aria-label="Medium" rel="noopener noreferrer">
+                    <i class="fab fa-medium" title="Read on Medium"></i>
+                </a>
+                <a href="https://x.com/ozsevenmert" target="_blank" aria-label="X (Twitter)" rel="noopener noreferrer">
+                    <i class="fab fa-x-twitter" title="Follow on X"></i>
+                </a>
+            </div>
+
+            <div class="resume-button">
+                <a href="https://drive.google.com/file/d/1ml-6nQ1MhGC7IHmAhMIHCb_xTRj174z7/view?usp=sharing" target="_blank" class="resume-link">
+                    View Resume
+                </a>
+            </div>
+
+            <!-- Medium Articles Section -->
+            <div class="content-section">
+                <h2>Latest Articles</h2>
+                <div id="medium-articles" class="grid-container"></div>
+            </div>
+
+            <!-- GitHub Repositories Section -->
+            <div class="content-section">
+                <h2>Featured Projects</h2>
+                <div id="github-repos" class="grid-container"></div>
+            </div>
+        </div>
+    </div>
+    <script src="scripts.js"></script>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0KNC9DP21C"></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Mert Adem Özseven",
+        "jobTitle": "iOS Developer",
+        "url": "https://mertozseven.com",
+        "sameAs": [
+            "https://linkedin.com/in/mert-adem-ozseven",
+            "https://github.com/mertozseven",
+            "https://stackoverflow.com/users/28642562/mertozseven",
+            "https://instagram.com/mertozseven",
+            "https://medium.com/@mertozseven",
+            "https://x.com/ozsevenmert"
+        ]
+    }
+    </script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        
+        // Enhanced analytics configuration
+        gtag('config', 'G-0KNC9DP21C', {
+            'page_title': document.title,
+            'page_path': window.location.pathname,
+            'custom_map': {
+                'dimension1': 'theme_preference',
+                'dimension2': 'device_type',
+                'dimension3': 'viewport_size'
+            }
+        });
+        
+        // Track theme preference
+        const trackTheme = () => {
+            const isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            gtag('event', 'theme_preference', {
+                'event_category': 'User Preference',
+                'event_label': isDark ? 'Dark Mode' : 'Light Mode',
+                'value': isDark ? 1 : 0
+            });
+        };
+        
+        // Track viewport size
+        const trackViewport = () => {
+            gtag('event', 'viewport_size', {
+                'event_category': 'User Interface',
+                'event_label': `${window.innerWidth}x${window.innerHeight}`,
+                'non_interaction': true
+            });
+        };
+        
+        // Track device type
+        const trackDevice = () => {
+            const device = /Mobile|iP(hone|od|ad)|Android|BlackBerry|IEMobile/.test(navigator.userAgent) 
+                ? 'Mobile' : 'Desktop';
+            gtag('event', 'device_type', {
+                'event_category': 'User Agent',
+                'event_label': device,
+                'non_interaction': true
+            });
+        };
+        
+        // Track scroll depth
+        const trackScroll = () => {
+            const scrollDepth = Math.round((window.scrollY + window.innerHeight) / document.documentElement.scrollHeight * 100);
+            if (scrollDepth % 25 === 0) { // Track at 25%, 50%, 75%, 100%
+                gtag('event', 'scroll_depth', {
+                    'event_category': 'User Engagement',
+                    'event_label': `${scrollDepth}%`,
+                    'non_interaction': true
+                });
+            }
+        };
+        
+        // Track social link clicks
+        const trackSocialClicks = () => {
+            const socialLinks = document.querySelectorAll('.social-links a');
+            socialLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    const platform = this.getAttribute('aria-label');
+                    gtag('event', 'social_click', {
+                        'event_category': 'Social Links',
+                        'event_label': platform
+                    });
+                });
+            });
+        };
+        
+        // Initialize all tracking
+        window.addEventListener('load', () => {
+            trackTheme();
+            trackViewport();
+            trackDevice();
+            trackSocialClicks();
+        });
+        
+        // Track theme changes
+        window.matchMedia('(prefers-color-scheme: dark)').addListener(trackTheme);
+        
+        // Track resize events (debounced)
+        let resizeTimeout;
+        window.addEventListener('resize', () => {
+            clearTimeout(resizeTimeout);
+            resizeTimeout = setTimeout(trackViewport, 1000);
+        });
+        
+        // Track scroll depth (throttled)
+        let scrollTimeout;
+        window.addEventListener('scroll', () => {
+            if (!scrollTimeout) {
+                scrollTimeout = setTimeout(() => {
+                    trackScroll();
+                    scrollTimeout = null;
+                }, 1000);
+            }
+        });
+                    gtag('event', 'social_link_click', {
+                        'event_category': 'Engagement',
+                        'event_label': platform,
+                        'value': 1
+                    });
+                });
+            });
+            
+            // Track resume button clicks
+            const resumeLink = document.querySelector('.resume-link');
+            if (resumeLink) {
+                resumeLink.addEventListener('click', function(e) {
+                    gtag('event', 'resume_click', {
+                        'event_category': 'Engagement',
+                        'event_label': 'Resume Download',
+                        'value': 1
+                    });
+                });
+            }
+        });
+    </script>
+</body>
+</html>
