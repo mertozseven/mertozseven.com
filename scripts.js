@@ -55,7 +55,7 @@ async function fetchMediumArticles() {
 
 async function fetchGithubRepositories() {
     try {
-        const response = await fetch('https://api.github.com/users/mertozseven/repos?sort=updated&per_page=6');
+        const response = await fetch('https://api.github.com/users/mertozseven/repos?sort=updated&per_page=8');
         const repos = await response.json();
         
         const reposContainer = document.getElementById('github-repos');
